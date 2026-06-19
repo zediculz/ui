@@ -20,7 +20,7 @@
       "purpose": "maskable"
     }
   ],
-  "start_url": "/?app=true",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000",
   "theme_color": "#fff",
@@ -31,7 +31,7 @@
       "short_name": "Watch Screen",
       "description": "Navigate directly to see a watch face.",
       "url": "/",
-      "icons": [{ "src": "3.png", "sizes": "96x96" }]
+      "icons": [{ "src": "/3.png", "sizes": "96x96" }]
     }
   ],
   "screenshots": [
