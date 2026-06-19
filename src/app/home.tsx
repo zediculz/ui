@@ -2,13 +2,18 @@
 //HOME PAGE
 //FEATURES
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AppHeader } from "../components/header"
 
 //COMPONENTS
 export function AppHomeLayout() {
-    const [h, setH] = useState<string>("Some Text Messages like this, well structed to display nothing less than 120 pts as a quote, bible verse and motivations")
+    const [h, setH] = useState<string>("")
     const [hLength, setHLength] = useState<number>(h.length)
+
+    useEffect(() => {
+        setHLength(h.length)
+        setH("Some Text Messages like this, well structed to display nothing less than 120 pts as a quote, bible verse and motivations")
+    }, [h.length])
 
     return (
         <>
