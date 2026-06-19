@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 //HOME PAGE
 //FEATURES
 
 import { useEffect, useState } from "react"
 import { AppHeader } from "../components/header"
+import { deviceInfo } from "../sys/device"
 
 //COMPONENTS
 export function AppHomeLayout() {
@@ -14,6 +16,16 @@ export function AppHomeLayout() {
         setHLength(h.length)
         setH("Some Text Messages like this, well structed to display nothing less than 120 pts as a quote, bible verse and motivations")
     }, [h.length])
+
+    console.log(deviceInfo)
+    
+    if ('userAgentData' in navigator) {
+        const ua = (navigator as any).userAgentData;
+        ua.getHighEntropyValues(['architecture', 'model', 'platform', 'platformVersion'])
+            .then((data: any) => {
+                console.log('userAgentData', data);
+            });
+    }
 
     return (
         <>
