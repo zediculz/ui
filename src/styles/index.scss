@@ -11,7 +11,7 @@
     font-variation-settings: "slnt" 0;
 
     /* Light Mode Colors */
-    --primary-color: #0000ff;
+    --primary-color: #000;
     --secondary-color: #fff;
     --black-color: #000;
     --bg-color: #2b27fd29;
@@ -20,13 +20,13 @@
     --old-color: #2b27fd15;
     --sec-color: #e5e5ff1c;
     --text-color: #000;
-    --container-bg:red;
+    --container-bg: #fff;
 }
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-color: #6366f1;
+        --primary-color: #fff;
         --secondary-color: #1f2937;
         --black-color: #fff;
         --bg-color: #4f46e51f;
@@ -35,13 +35,13 @@
         --old-color: #4f46e530;
         --sec-color: #818cf81f;
         --text-color: #f3f4f6;
-        --container-bg: #fff;
+        --container-bg: #000;
     }
 }
 
 /* Dark Mode Class (for manual toggle) */
 .dark-mode {
-    --primary-color: #6366f1;
+    --primary-color: #fff;
     --secondary-color: #1f2937;
     --black-color: #fff;
     --bg-color: #4f46e51f;
@@ -50,7 +50,7 @@
     --old-color: #4f46e530;
     --sec-color: #818cf81f;
     --text-color: #f3f4f6;
-    --container-bg: #fff;
+    --container-bg: #000;
 }
 
 $test: red;
@@ -73,6 +73,12 @@ $sec: var(--sec-color);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin flexSide {
+    @include flexCenter();
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 @mixin btns {
@@ -109,7 +115,7 @@ $sec: var(--sec-color);
 
 .root-container header {
     width: 100%;
-    height: 5%;
+    height: 8%;
     @include flexCenter();
 
     & .logo {
@@ -117,12 +123,12 @@ $sec: var(--sec-color);
         height: 100%;
         @include flexCenter();
         justify-content: flex-start;
-        background-color: var(--header-bg);
+        background-color: var(--container-bg);
 
         & h2 {
             font-size: 8pt;
             color: var(--primary-color);
-            margin-left: 50px;
+            margin-left: 20px;
         }
     }
 }
@@ -130,8 +136,51 @@ $sec: var(--sec-color);
 
 .app-main {
     width: 100%;
-    height: 85%;
-    overflow: scroll;
+    height: 80%;
+    overflow: hidden;
+}
+
+.app-main .app-main-home {
+    width: 100%;
+    height: 80%;
+    @include flexCenter();
+    flex-direction: column;
+
+    & .center {
+        width: 88%;
+        height: 60%;
+        @include flexSide();
+        color: var(--primary-color);
+
+        & b {
+            font-size: 8pt;
+        }
+
+        & h1 {
+            padding: 17px;
+            padding-left: 0;
+            padding-top: 8pt;
+            font-size: 22pt;
+        }
+
+        & p {
+            font-size: 12pt;
+            font-weight: bold;
+        }
+    }
+
+    & .time {
+        width: 80%;
+        height: 12%;
+        @include flexCenter();
+        background-color: var(--primary-color);
+
+
+        & h3 {
+            font-size: 14pt;
+            color: var(--container-bg);
+        }
+    }
 }
 
 .app-error {
@@ -145,7 +194,7 @@ $sec: var(--sec-color);
 
 .root-container footer {
     width: 100%;
-    height: 10%;
+    height: 12%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -156,19 +205,26 @@ $sec: var(--sec-color);
         @include flexCenter();
         
         & aside {
-            width: 25%;
+            width: 30%;
             height: 100%;
             @include flexCenter();
             flex-direction: column;
+            color: var(--primary-color);
 
             & h3 {
-                font-size: 28pt;
+                font-size: 26pt;
                 cursor: pointer;
+                @include flexCenter();
+                flex-direction: column;
+
+                & p {
+                    font-size: 8pt;
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
             }
 
-            & p {
-                font-size: 7pt;
-            }
+            
         }
     }
 }

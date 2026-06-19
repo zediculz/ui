@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createBrowserRouter } from "react-router"
-import { Root, AppHomeLayout, AppProfileLayout, AppSettingsLayout } from "./app"
+import { Root, AppHomeLayout, AppSettingsLayout, AppCustomizeLayout } from "./app"
 
 const router = createBrowserRouter([{
     path: "/",
     Component: Root,
     children: [
       {index: true, Component: AppHomeLayout},
-      {path: "/profile", Component: AppProfileLayout  },
-      {path: "/orders", Component: AppSettingsLayout }
+      { path: "/customize", Component: AppCustomizeLayout  },
+      {path: "/settings", Component: AppSettingsLayout }
     ]
   },
 ])

@@ -1,7 +1,7 @@
 
 import { Root } from "./root"
 import { AppHomeLayout } from "./home"
-import { AppProfileLayout } from "./profile"
+import { AppCustomizeLayout } from "./customize"
 import { AppSettingsLayout } from "./settings"
 
 import type { Location, NavigateFunction } from "react-router"
@@ -33,6 +33,6 @@ function handleNav({to, auth, navigate, location}:NAV) {
 
 
 export {
-    Root, AppHomeLayout, AppProfileLayout, 
+    Root, AppHomeLayout, AppCustomizeLayout, 
     AppSettingsLayout, handleNav
 }

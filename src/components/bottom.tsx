@@ -3,43 +3,43 @@ import { useLocation, useNavigate } from "react-router";
 import { handleNav } from "../app";
 import { useState } from "react";
 
-interface AppBottomType {
-    auth: boolean
-}
 
-type FOCUS = "home"|"order"|"user"
+type FOCUS = "c"|"h"|"s"
 
-export function AppBottom(e:AppBottomType) {
-    const [focus, setFocus] = useState<FOCUS>("home")
+export function AppBottom() {
+    const [focus, setFocus] = useState<FOCUS>("h")
 
     const N = useNavigate()
     const L = useLocation()
 
     const nav = (to:string, f:FOCUS) => {
         setFocus(f)
-        handleNav({to, auth: e.auth, navigate: N, location: L})
+        handleNav({to, auth: true, navigate: N, location: L})
     }
 
     return(
-        <footer style={{display: e.auth ? "flex" : "none"}}>
+        <footer>
         <div className="center">
+          
           <aside>
-            <h3 onClick={() => nav("/app", "home")}>
-               {focus === "home" ? <BiSolidHomeCircle /> : <BiHomeCircle />}
+            <h3 onClick={() => nav("/customize", "c")}>
+              {focus === "c" ? <BiSolidCart /> : <BiCart />}
+              <p>customize</p>
             </h3>
-            <p>home</p>
           </aside>
+
           <aside>
-            <h3 onClick={() => nav("/app/orders", "order")}>
-                {focus === "order" ? <BiSolidCart /> : <BiCart />}
+            <h3 onClick={() => nav("/", "h")}>
+              {focus === "h" ? <BiSolidHomeCircle /> : <BiHomeCircle />}
+              <p>home</p>
             </h3>
-            <p>orders</p>
           </aside>
+          
           <aside>
-            <h3 onClick={() => nav("/app/profile", "user")}>
-                {focus === "user" ? <BiSolidUser /> : <BiUser />}
+            <h3 onClick={() => nav("/settings", "s")}>
+              {focus === "s" ? <BiSolidUser /> : <BiUser />}
+              <p>settings</p>
             </h3>
-            <p>user</p>
           </aside>
         </div>
       </footer>
