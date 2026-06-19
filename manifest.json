@@ -1,20 +1,20 @@
 {
-  "name": "My Awesome PWA",
-  "short_name": "Awesome PWA",
-  "description": "A progressive web application demonstrating key PWA features.",
+  "name": "Watch App",
+  "short_name": "WatchApp",
+  "description": "A simple watch progressive app.",
   "icons": [
     {
-      "src": "3.png",
+      "src": "2.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-       "src": "3.png",
+       "src": "2.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-       "src": "3.png",
+       "src": "2.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
@@ -22,15 +22,15 @@
   ],
   "start_url": "/app?start=pwa",
   "display": "standalone",
-  "background_color": "#f0f0f0",
-  "theme_color": "#007bff",
+  "background_color": "#000",
+  "theme_color": "#fff",
   "scope": "/",
   "shortcuts": [
     {
-      "name": "Quick Access Feature",
-      "short_name": "Quick Access",
-      "description": "Navigate directly to a key feature of the app.",
-      "url": "/feature-page",
+      "name": "Quick Watch Screen",
+      "short_name": "Watch Screen",
+      "description": "Navigate directly to see a watch face.",
+      "url": "/",
       "icons": [{ "src": "3.png", "sizes": "96x96" }]
     }
   ],

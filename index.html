@@ -4,11 +4,81 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>WatchApp</title>
     <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" href="2.png" />
+    <meta name="theme-color" content="#0000ff" />
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <meta name="apple-mobile-web-app-title" content="Watch App">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Windows  -->
+    <meta name="msapplication-navbutton-color" content="#0000ff">
+    <meta name="msapplication-TileColor" content="#0000ff">
+    
+    <!-- Pinned Sites  -->
+    <meta name="application-name" content="Watch App">
+    <meta name="msapplication-tooltip"
+      content="Watch App.">
+    <meta name="msapplication-starturl" content="/">
+    
+    <!-- Tap highlighting  -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- UC Mobile Browser  -->
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    
+    <!-- Disable night mode for this page  -->
+    <meta name="nightmode" content="enable/disable">
+    
+    <!-- Layout mode -->
+    <meta name="layoutmode" content="fitscreen/standard">
+    
+    <!-- imagemode - show image even in text only mode  -->
+    <meta name="imagemode" content="force">
+    
+    <!-- Orientation  -->
+    <meta name="screen-orientation" content="portrait">
+    
+    <meta name="description"
+      content="Sell, Receive and Make Use of your BTC, USDT, ETH, BNB, SOL and other Cryptocurrencies." />
+    <link rel="apple-touch-icon" href="2.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <link rel="apple-touch-startup-image" href="/logo.png"
+      media="(min-device-width: 1024px) and (max-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@nanabrity">
+    <meta name="twitter:title" content="Nanabrity">
+    <meta name="twitter:description"
+      content="Watch App.">
+    <meta name="twitter:image" content="/card.png">
+    <meta name="twitter:creator" content="@zediculz">
+    
+    
+    <meta property="og:title" content="WatchApp" />
+    <meta property="og:type" content="platform" />
+    <meta property="og:url" content="https://www.watchapp.com" />
+    <meta property="og:image" content="/card.png" />
+    <meta property="og:description"
+      content="Watch App" />
+    <meta property="og:site_name" content="WatchApp" />
+    <meta property="og:locale" content="en_US" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        })
+      }
+    </script>
   </body>
 </html>

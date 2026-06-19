@@ -1,8 +1,12 @@
+import { AppPopHeader } from "../components/pop";
 
 export function AppCustomizeLayout() {
     return(
-        <div className="app-main">
-            
-        </div>
+        <>
+            <AppPopHeader /> 
+            <div className="app-main">
+
+            </div>
+        </>
     )
 }
