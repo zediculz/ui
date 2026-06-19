@@ -1,0 +1,52 @@
+{
+  "name": "My Awesome PWA",
+  "short_name": "Awesome PWA",
+  "description": "A progressive web application demonstrating key PWA features.",
+  "icons": [
+    {
+      "src": "3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+       "src": "3.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+       "src": "3.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/app?start=pwa",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#007bff",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Quick Access Feature",
+      "short_name": "Quick Access",
+      "description": "Navigate directly to a key feature of the app.",
+      "url": "/feature-page",
+      "icons": [{ "src": "3.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+       "src": "3.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "3.png",
+      "sizes": "720x540",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "id": "/?source=pwa"
+}
